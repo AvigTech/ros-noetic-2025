@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instalación de Ubuntu para usar ROS Noetic &mdash; documentación de AvigTech Docs - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=8e0ebba5"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Ubuntu y GitHub" href="UbuntuGit.html" />
+    <link rel="prev" title="¿Qué es ROS?" href="../0_introROS/ROS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AvigTech Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ROS Noetic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../0_introROS/ROS.html">¿Qué es ROS?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisitos</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instalación de Ubuntu para usar ROS Noetic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recursos-de-descarga">Recursos de descarga</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opciones-de-instalacion">Opciones de instalación</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comparativa-particion-del-disco-vs-maquina-virtual">Comparativa: Partición del Disco vs Máquina Virtual</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tutoriales-recomendados">Tutoriales recomendados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verificacion-de-instalacion-de-python">Verificación de instalación de Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="UbuntuGit.html">Ubuntu y GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacionROS.html">Instalación de ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Mensajes, Servicios y Acciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/paquetes.html">Elemento básicos de ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/mensajes.html">ROS MSG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/servicios.html">ROS Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/action.html">ROS Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/xarm.html">Xarm Cobot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Conexión con Dispositivos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_serial.html">Conexion Serial - TCP IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_mqtt.html">Conexion MQTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_webSocket.html">ROS Bridge</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualización de datos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Rviz.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Percepcion.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aplicación SMRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/deficion.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/elementos.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/contruccionRM.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Arquitectura.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/NodoCentral.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Nodoindividual.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AvigTech Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Instalación de Ubuntu para usar ROS Noetic</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/clases/1_prerequisitos/instalacionUbuntu.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="instalacion-de-ubuntu-para-usar-ros-noetic">
+<h1>Instalación de Ubuntu para usar ROS Noetic<a class="headerlink" href="#instalacion-de-ubuntu-para-usar-ros-noetic" title="Enlace permanente a este encabezado"></a></h1>
+<p>Para el funcionamiento de ROS es necesario instalar Ubuntu.<br />
+En este curso trabajaremos con <strong>Ubuntu 20.04</strong> y <strong>ROS Noetic</strong>.</p>
+<hr class="docutils" />
+<section id="recursos-de-descarga">
+<h2>Recursos de descarga<a class="headerlink" href="#recursos-de-descarga" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p><strong>Imagen ISO Ubuntu 20.04.6:</strong><br />
+<a class="reference external" href="https://releases.ubuntu.com/focal/">Descargar desde releases.ubuntu.com</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="opciones-de-instalacion">
+<h2>Opciones de instalación<a class="headerlink" href="#opciones-de-instalacion" title="Enlace permanente a este encabezado"></a></h2>
+<section id="comparativa-particion-del-disco-vs-maquina-virtual">
+<h3>Comparativa: Partición del Disco vs Máquina Virtual<a class="headerlink" href="#comparativa-particion-del-disco-vs-maquina-virtual" title="Enlace permanente a este encabezado"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Característica</p></th>
+<th class="head"><p>Instalar en Disco (Dual Boot)</p></th>
+<th class="head"><p>Máquina Virtual</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>🔧 Rendimiento</p></td>
+<td><p>Alto, accede directamente al hardware</p></td>
+<td><p>Medio, depende del host y configuración</p></td>
+</tr>
+<tr class="row-odd"><td><p>💾 Espacio dedicado</p></td>
+<td><p>Necesita particionar el disco real</p></td>
+<td><p>Usa archivo virtual, configurable</p></td>
+</tr>
+<tr class="row-even"><td><p>🧰 Acceso a periféricos</p></td>
+<td><p>Total (puertos, GPU, cámara, etc.)</p></td>
+<td><p>Limitado (USB y sensores configurables)</p></td>
+</tr>
+<tr class="row-odd"><td><p>📦 Instalación de drivers</p></td>
+<td><p>Manual, igual que en una instalación real</p></td>
+<td><p>Generalmente menos problema con drivers</p></td>
+</tr>
+<tr class="row-even"><td><p>🔄 Cambiar entre SO</p></td>
+<td><p>Reinicio necesario</p></td>
+<td><p>Cambio instantáneo dentro del host</p></td>
+</tr>
+<tr class="row-odd"><td><p>📚 Ideal para</p></td>
+<td><p>Uso profesional, proyectos con hardware real</p></td>
+<td><p>Pruebas, simulación, desarrollo portable</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tutoriales-recomendados">
+<h2>Tutoriales recomendados<a class="headerlink" href="#tutoriales-recomendados" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p><strong>Opción 1: Partición de disco (Dual Boot):</strong><br />
+Es necesario utilizar la ISO descargada de Ubuntu 20.04 LTS</p></li>
+</ul>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=_d6oT7rEoGc">Ver en YouTube</a></p>
+<ul class="simple">
+<li><p><strong>Opción 2: Máquina Virtual:</strong><br />
+<a class="reference internal" href="0-Maquina-Virtual.html"><span class="std std-doc">Guía práctica aquí</span></a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="verificacion-de-instalacion-de-python">
+<h2>Verificación de instalación de Python<a class="headerlink" href="#verificacion-de-instalacion-de-python" title="Enlace permanente a este encabezado"></a></h2>
+<p>Una vez dentro de Ubuntu, abre una terminal y ejecuta:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>Debe mostrarse algo como <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.8.x</span></code>, que es la versión por defecto en Ubuntu 20.04.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="../0_introROS/ROS.html" class="btn btn-neutral float-left" title="¿Qué es ROS?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="UbuntuGit.html" class="btn btn-neutral float-right" title="Ubuntu y GitHub" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, AvigTech.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

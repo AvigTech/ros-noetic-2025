@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📝 Guía de Estructura Markdown para Documentación ROS &mdash; documentación de AvigTech Docs - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=8e0ebba5"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AvigTech Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ROS Noetic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../0_introROS/ROS.html">¿Qué es ROS?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisitos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instalacionUbuntu.html">Instalación de Ubuntu para usar ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UbuntuGit.html">Ubuntu y GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacionROS.html">Instalación de ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Mensajes, Servicios y Acciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/paquetes.html">Elemento básicos de ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/mensajes.html">ROS MSG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/servicios.html">ROS Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/action.html">ROS Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/xarm.html">Xarm Cobot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Conexión con Dispositivos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_serial.html">Conexion Serial - TCP IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_mqtt.html">Conexion MQTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_webSocket.html">ROS Bridge</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualización de datos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Rviz.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Percepcion.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aplicación SMRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/deficion.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/elementos.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/contruccionRM.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Arquitectura.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/NodoCentral.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Nodoindividual.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AvigTech Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">📝 Guía de Estructura Markdown para Documentación ROS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/clases/1_prerequisitos/uso de markdown.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guia-de-estructura-markdown-para-documentacion-ros">
+<h1>📝 Guía de Estructura Markdown para Documentación ROS<a class="headerlink" href="#guia-de-estructura-markdown-para-documentacion-ros" title="Enlace permanente a este encabezado"></a></h1>
+<p>Este documento sirve como referencia básica de los elementos comunes en Markdown que puedes usar en la documentación del curso ROS Noetic SMR.</p>
+<hr class="docutils" />
+<section id="indices-y-subindices">
+<h2>📚 Índices y Subíndices<a class="headerlink" href="#indices-y-subindices" title="Enlace permanente a este encabezado"></a></h2>
+<section id="subtitulo-de-tercer-nivel">
+<h3>🧩 Subtítulo de tercer nivel<a class="headerlink" href="#subtitulo-de-tercer-nivel" title="Enlace permanente a este encabezado"></a></h3>
+<p>Puedes estructurar tus secciones así:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Título principal
+## Subtítulo
+### Sub-subtítulo
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="formatos-de-texto">
+<h2>✍️ Formatos de texto<a class="headerlink" href="#formatos-de-texto" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p><strong>Negrita</strong>: <code class="docutils literal notranslate"><span class="pre">**negrita**</span></code> → <strong>negrita</strong></p></li>
+<li><p><em>Cursiva</em>: <code class="docutils literal notranslate"><span class="pre">*cursiva*</span></code> → <em>cursiva</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Código</span> <span class="pre">en</span> <span class="pre">línea</span></code>: usa comillas invertidas <code class="docutils literal notranslate"><span class="pre">`comando`</span></code> → <code class="docutils literal notranslate"><span class="pre">comando</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="listas">
+<h2>✅ Listas<a class="headerlink" href="#listas" title="Enlace permanente a este encabezado"></a></h2>
+<section id="lista-con-vinetas">
+<h3>Lista con viñetas<a class="headerlink" href="#lista-con-vinetas" title="Enlace permanente a este encabezado"></a></h3>
+<ul class="simple">
+<li><p>Item 1</p></li>
+<li><p>Item 2</p>
+<ul>
+<li><p>Subitem 2.1</p></li>
+<li><p>Subitem 2.2</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="lista-numerada">
+<h3>Lista numerada<a class="headerlink" href="#lista-numerada" title="Enlace permanente a este encabezado"></a></h3>
+<ol class="arabic simple">
+<li><p>Paso uno</p></li>
+<li><p>Paso dos</p></li>
+<li><p>Paso tres</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bloques-de-codigo">
+<h2>💻 Bloques de código<a class="headerlink" href="#bloques-de-codigo" title="Enlace permanente a este encabezado"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscore
+rosrun<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
+</pre></div>
+</div>
+<p>::
+dddd</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">saludo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola ROS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="imagenes">
+<h2>🖼️ Imágenes<a class="headerlink" href="#imagenes" title="Enlace permanente a este encabezado"></a></h2>
+<p>Puedes mostrar imágenes locales o externas:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>![Descripción de la imagen](../_static/ejemplo.png)
+</pre></div>
+</div>
+<p>Ejemplo:</p>
+<p><img alt="Robot" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Robot_Pepper.jpg" /></p>
+</section>
+<hr class="docutils" />
+<section id="enlaces">
+<h2>🔗 Enlaces<a class="headerlink" href="#enlaces" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ros.org/">Sitio oficial de ROS</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AvigTech/ros-noetic-smr">Repositorio del curso</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="estructura-de-carpetas">
+<h2>📦 Estructura de carpetas<a class="headerlink" href="#estructura-de-carpetas" title="Enlace permanente a este encabezado"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ros-noetic-smr/
+├── docs/
+│   ├── index.md
+│   └── clases/
+│       └── clase1.md
+├── .github/
+└── README.md
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="notas-y-advertencias">
+<h2>🧠 Notas y advertencias<a class="headerlink" href="#notas-y-advertencias" title="Enlace permanente a este encabezado"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Este es un mensaje informativo tipo «note».</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Este bloque es una advertencia. Úsalo para precauciones o errores comunes.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, AvigTech.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

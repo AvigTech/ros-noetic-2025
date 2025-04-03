@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubuntu y GitHub &mdash; documentación de AvigTech Docs - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=8e0ebba5"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Instalación de ROS Noetic" href="instalacionROS.html" />
+    <link rel="prev" title="Instalación de Ubuntu para usar ROS Noetic" href="instalacionUbuntu.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AvigTech Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ROS Noetic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../0_introROS/ROS.html">¿Qué es ROS?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisitos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="instalacionUbuntu.html">Instalación de Ubuntu para usar ROS Noetic</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ubuntu y GitHub</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu">Ubuntu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comandos-basicos-de-ubuntu-terminal">Comandos básicos de Ubuntu (Terminal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permisos-en-directorios-y-archivos">Permisos en directorios y archivos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejemplo-chmod-666-archivo-txt">Ejemplo: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">666</span> <span class="pre">archivo.txt</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#claves-ssh">Claves SSH</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#github">GitHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comandos-basicos-de-git">Comandos básicos de Git</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#relacion-con-ros">Relación con ROS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instalacionROS.html">Instalación de ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Mensajes, Servicios y Acciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/paquetes.html">Elemento básicos de ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/mensajes.html">ROS MSG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/servicios.html">ROS Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/action.html">ROS Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/xarm.html">Xarm Cobot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Conexión con Dispositivos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_serial.html">Conexion Serial - TCP IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_mqtt.html">Conexion MQTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_webSocket.html">ROS Bridge</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualización de datos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Rviz.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Percepcion.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aplicación SMRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/deficion.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/elementos.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/contruccionRM.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Arquitectura.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/NodoCentral.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Nodoindividual.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AvigTech Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Ubuntu y GitHub</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/clases/1_prerequisitos/UbuntuGit.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ubuntu-y-github">
+<h1>Ubuntu y GitHub<a class="headerlink" href="#ubuntu-y-github" title="Enlace permanente a este encabezado"></a></h1>
+<p>En esta sección aprenderás los fundamentos básicos de <strong>Ubuntu</strong> y <strong>GitHub</strong>, dos herramientas esenciales en el desarrollo con <strong>ROS (Robot Operating System)</strong>.</p>
+<hr class="docutils" />
+<section id="ubuntu">
+<h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Enlace permanente a este encabezado"></a></h2>
+<p>Ubuntu es un sistema operativo basado en Linux ampliamente utilizado en el desarrollo con ROS, debido a su estabilidad, soporte de comunidad y compatibilidad.</p>
+<section id="comandos-basicos-de-ubuntu-terminal">
+<h3>Comandos básicos de Ubuntu (Terminal)<a class="headerlink" href="#comandos-basicos-de-ubuntu-terminal" title="Enlace permanente a este encabezado"></a></h3>
+<p>Aquí tienes una tabla con comandos fundamentales del sistema operativo Ubuntu:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Categoría</p></th>
+<th class="head"><p>Comando</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Navegación</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p></td>
+<td><p>Lista archivos del directorio actual</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">nombre/</span></code></p></td>
+<td><p>Cambia al directorio especificado</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></td>
+<td><p>Muestra la ruta del directorio actual</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Archivos y carpetas</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">nueva/</span></code></p></td>
+<td><p>Crea una carpeta nueva</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">archivo.txt</span></code></p></td>
+<td><p>Crea un archivo vacío</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">archivo.txt</span></code></p></td>
+<td><p>Elimina un archivo</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">carpeta/</span></code></p></td>
+<td><p>Elimina una carpeta y su contenido</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Paquetes</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code></p></td>
+<td><p>Actualiza el índice de paquetes</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">nombre_paquete</span></code></p></td>
+<td><p>Instala un paquete</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Permisos</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">script.sh</span></code></p></td>
+<td><p>Da permiso de ejecución a un script</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="permisos-en-directorios-y-archivos">
+<h3>Permisos en directorios y archivos<a class="headerlink" href="#permisos-en-directorios-y-archivos" title="Enlace permanente a este encabezado"></a></h3>
+<p>En Linux, cada archivo o carpeta tiene <strong>permisos asociados</strong> para:</p>
+<ul class="simple">
+<li><p><strong>Usuario (u)</strong>: el dueño del archivo</p></li>
+<li><p><strong>Grupo (g)</strong>: usuarios del mismo grupo</p></li>
+<li><p><strong>Otros (o)</strong>: el resto del sistema</p></li>
+</ul>
+<p>Los permisos se definen con números:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Número</p></th>
+<th class="head"><p>Permiso</p></th>
+<th class="head"><p>Significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rwx</span></code></p></td>
+<td><p>leer, escribir, ejecutar</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rw-</span></code></p></td>
+<td><p>leer y escribir</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r-x</span></code></p></td>
+<td><p>leer y ejecutar</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">r--</span></code></p></td>
+<td><p>solo lectura</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-w-</span></code></p></td>
+<td><p>solo escritura</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--x</span></code></p></td>
+<td><p>solo ejecución</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">---</span></code></p></td>
+<td><p>sin permisos</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="ejemplo-chmod-666-archivo-txt">
+<h3>Ejemplo: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">666</span> <span class="pre">archivo.txt</span></code><a class="headerlink" href="#ejemplo-chmod-666-archivo-txt" title="Enlace permanente a este encabezado"></a></h3>
+<p>Este comando asigna permisos <code class="docutils literal notranslate"><span class="pre">rw-</span> <span class="pre">rw-</span> <span class="pre">rw-</span></code>, lo que significa:</p>
+<ul class="simple">
+<li><p><strong>Usuario</strong> puede leer y escribir</p></li>
+<li><p><strong>Grupo</strong> puede leer y escribir</p></li>
+<li><p><strong>Otros</strong> pueden leer y escribir</p></li>
+</ul>
+<blockquote>
+<div><p>No es recomendable usar <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">666</span></code> en archivos sensibles, ya que cualquiera podría modificarlos.</p>
+</div></blockquote>
+<p>Para carpetas, los permisos de ejecución (<code class="docutils literal notranslate"><span class="pre">x</span></code>) también son necesarios para poder <strong>entrar al directorio</strong>. Por ejemplo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>mi_carpeta/
+</pre></div>
+</div>
+<p>Esto da permisos <code class="docutils literal notranslate"><span class="pre">rwx</span> <span class="pre">r-x</span> <span class="pre">r-x</span></code>, lo cual permite entrar a la carpeta y leer su contenido sin permitir modificaciones por otros.</p>
+</section>
+<section id="claves-ssh">
+<h3>Claves SSH<a class="headerlink" href="#claves-ssh" title="Enlace permanente a este encabezado"></a></h3>
+<p>ROS se usa frecuentemente en redes. Por eso, generar una clave SSH para GitHub es muy útil para trabajar de forma segura:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;tu_correo@ejemplo.com&quot;</span>
+cat<span class="w"> </span>~/.ssh/id_ed25519.pub
+</pre></div>
+</div>
+<p>Agrega esa clave pública a tu cuenta de GitHub.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="github">
+<h2>GitHub<a class="headerlink" href="#github" title="Enlace permanente a este encabezado"></a></h2>
+<p>GitHub es una plataforma de control de versiones basada en Git que permite almacenar, compartir y colaborar en código fuente. Es ideal para proyectos ROS, especialmente al trabajar en equipos o distribuir paquetes.</p>
+<section id="comandos-basicos-de-git">
+<h3>Comandos básicos de Git<a class="headerlink" href="#comandos-basicos-de-git" title="Enlace permanente a este encabezado"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configurar usuario</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Tu Nombre&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;tu_correo@example.com&quot;</span>
+
+<span class="c1"># Clonar un repositorio</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usuario/repositorio.git
+
+<span class="c1"># Crear y subir cambios</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Descripción del cambio&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Sincronizar cambios</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="relacion-con-ros">
+<h2>Relación con ROS<a class="headerlink" href="#relacion-con-ros" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p><strong>Ubuntu</strong> es el sistema oficial y más estable para ejecutar ROS (especialmente ROS Noetic y ROS 2 Foxy).</p></li>
+<li><p><strong>GitHub</strong> permite almacenar paquetes ROS, compartir código con la comunidad y reutilizar módulos.</p></li>
+<li><p>Es común ver repositorios de GitHub con paquetes ROS que se pueden clonar y compilar directamente en <code class="docutils literal notranslate"><span class="pre">catkin_ws</span></code> o <code class="docutils literal notranslate"><span class="pre">ros2_ws</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>¡Dominar Ubuntu y GitHub te abrirá las puertas al desarrollo profesional en robótica con ROS!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="instalacionUbuntu.html" class="btn btn-neutral float-left" title="Instalación de Ubuntu para usar ROS Noetic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="instalacionROS.html" class="btn btn-neutral float-right" title="Instalación de ROS Noetic" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, AvigTech.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
