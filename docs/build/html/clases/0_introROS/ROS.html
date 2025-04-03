@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Qué es ROS? &mdash; documentación de AvigTech Docs - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=8e0ebba5"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Instalación de Ubuntu para usar ROS Noetic" href="../1_prerequisitos/instalacionUbuntu.html" />
+    <link rel="prev" title="📘 Curso ROS Noetic SMR" href="../../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AvigTech Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ROS Noetic</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">¿Qué es ROS?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ecosistema-ros">Ecosistema ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arquitectura-de-ros">Arquitectura de ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plumbing-vs-capabilities">Plumbing vs Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-recomendado">Video recomendado</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ros-te-permite">ROS te permite</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisitos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/instalacionUbuntu.html">Instalación de Ubuntu para usar ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/UbuntuGit.html">Ubuntu y GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/instalacionROS.html">Instalación de ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Mensajes, Servicios y Acciones</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/paquetes.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/mensajes.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/servicios.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/action.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_msg/xarm.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Conexión con Dispositivos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_serial.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_mqtt.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_webSocket.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualización de datos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Rviz.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Percepcion.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aplicación SMRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/deficion.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/elementos.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/contruccionRM.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Arquitectura.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/NodoCentral.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Nodoindividual.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AvigTech Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">¿Qué es ROS?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/clases/0_introROS/ROS.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="que-es-ros">
+<h1>¿Qué es ROS?<a class="headerlink" href="#que-es-ros" title="Enlace permanente a este encabezado"></a></h1>
+<p>ROS (<strong>Robot Operating System</strong>) es un <strong>conjunto de herramientas, bibliotecas y convenciones</strong> que permiten desarrollar software para robots de manera modular, escalable y reutilizable.</p>
+<p>Aunque su nombre sugiere que es un sistema operativo, <strong>ROS no es un sistema operativo tradicional</strong>, sino una capa de software que corre sobre uno (normalmente Ubuntu/Linux).</p>
+<hr class="docutils" />
+<section id="ecosistema-ros">
+<h2>Ecosistema ROS<a class="headerlink" href="#ecosistema-ros" title="Enlace permanente a este encabezado"></a></h2>
+<p>El ecosistema de ROS incluye:</p>
+<ul class="simple">
+<li><p><strong>Paquetes (packages):</strong> Componentes de software reutilizables</p></li>
+<li><p><strong>Nodos (nodes):</strong> Procesos que se comunican entre sí</p></li>
+<li><p><strong>Tópicos (topics):</strong> Canales de comunicación para intercambio de mensajes</p></li>
+<li><p><strong>Servicios (services):</strong> Comunicación síncrona entre nodos</p></li>
+<li><p><strong>Acciones (actions):</strong> Para tareas que toman tiempo en completarse</p></li>
+<li><p><strong>Bag files:</strong> Para grabar y reproducir datos</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="arquitectura-de-ros">
+<h2>Arquitectura de ROS<a class="headerlink" href="#arquitectura-de-ros" title="Enlace permanente a este encabezado"></a></h2>
+<p>La arquitectura de ROS se basa en el modelo <strong>peer-to-peer</strong> y está diseñada para ser altamente distribuida. Los componentes principales son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">roscore</span></code>: El servidor maestro que mantiene el registro de nodos y tópicos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rosnode</span></code>: Herramienta de línea de comandos para interactuar con nodos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rostopic</span></code>: Herramienta para inspeccionar tópicos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rosservice</span></code>: Inspección e invocación de servicios</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rosbag</span></code>: Grabación/reproducción de datos</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="plumbing-vs-capabilities">
+<h2>Plumbing vs Capabilities<a class="headerlink" href="#plumbing-vs-capabilities" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p><strong>Plumbing:</strong> Son las herramientas base de comunicación de bajo nivel (nodos, tópicos, servicios, acciones)</p></li>
+<li><p><strong>Capabilities:</strong> Son los sistemas de alto nivel que permiten funciones como navegación, percepción, manipulación, etc. Por ejemplo:</p>
+<ul>
+<li><p>SLAM (Simultaneous Localization and Mapping)</p></li>
+<li><p>Navigation Stack</p></li>
+<li><p>MoveIt! para brazos robóticos</p></li>
+<li><p>Percepción con cámaras y sensores</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="video-recomendado">
+<h2>Video recomendado<a class="headerlink" href="#video-recomendado" title="Enlace permanente a este encabezado"></a></h2>
+<p>Para una introducción visual a ROS, puedes ver este video en YouTube:<br />
+🔗 <a class="reference external" href="https://www.youtube.com/watch?v=_n3wtG3n0JQ">¿Qué es ROS? - Introducción en español</a></p>
+</section>
+<hr class="docutils" />
+<section id="ros-te-permite">
+<h2>ROS te permite<a class="headerlink" href="#ros-te-permite" title="Enlace permanente a este encabezado"></a></h2>
+<ul class="simple">
+<li><p>Reutilizar código</p></li>
+<li><p>Integrar hardware y simuladores</p></li>
+<li><p>Desarrollar algoritmos de robótica avanzados</p></li>
+<li><p>Colaborar en proyectos a gran escala</p></li>
+</ul>
+<blockquote>
+<div><p>ROS es el corazón del software moderno para robots. Si estás empezando en robótica, dominar ROS es esencial.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="../../index.html" class="btn btn-neutral float-left" title="📘 Curso ROS Noetic SMR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../1_prerequisitos/instalacionUbuntu.html" class="btn btn-neutral float-right" title="Instalación de Ubuntu para usar ROS Noetic" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, AvigTech.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

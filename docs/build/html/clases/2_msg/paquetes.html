@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elemento básicos de ROS &mdash; documentación de AvigTech Docs - 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=8e0ebba5"></script>
+      <script src="../../_static/doctools.js?v=888ff710"></script>
+      <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="ROS MSG" href="mensajes.html" />
+    <link rel="prev" title="Instalación de ROS Noetic" href="../1_prerequisitos/instalacionROS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AvigTech Docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ROS Noetic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../0_introROS/ROS.html">¿Qué es ROS?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prerequisitos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/instalacionUbuntu.html">Instalación de Ubuntu para usar ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/UbuntuGit.html">Ubuntu y GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/instalacionROS.html">Instalación de ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Mensajes, Servicios y Acciones</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Elemento básicos de ROS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#espacio-de-trabajo">Espacio de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paquetes-en-ros">Paquetes en ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicio">Ejercicio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-de-nodos-en-ros">Creación de Nodos en ROS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mensajes.html">ROS MSG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servicios.html">ROS Servicios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="action.html">ROS Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xarm.html">Xarm Cobot</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Conexión con Dispositivos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_serial.html">Conexion Serial - TCP IP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_mqtt.html">Conexion MQTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_disp/comunicacion_webSocket.html">ROS Bridge</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visualización de datos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Rviz.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_datos/Percepcion.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aplicación SMRM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/deficion.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/elementos.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/contruccionRM.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Arquitectura.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/NodoCentral.html">Clase 1: Introducción a ROS Noetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_SMR/Nodoindividual.html">Clase 1: Introducción a ROS Noetic</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AvigTech Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Elemento básicos de ROS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/clases/2_msg/paquetes.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="elemento-basicos-de-ros">
+<h1>Elemento básicos de ROS<a class="headerlink" href="#elemento-basicos-de-ros" title="Enlace permanente a este encabezado"></a></h1>
+<section id="espacio-de-trabajo">
+<h2>Espacio de trabajo<a class="headerlink" href="#espacio-de-trabajo" title="Enlace permanente a este encabezado"></a></h2>
+<p>En ROS (Robot Operating System), el <strong>espacio de trabajo</strong> (workspace) es una estructura de directorios donde se desarrolla, organiza y compila todo el código relacionado con ROS. Es una parte esencial para estructurar los paquetes, nodos y configuraciones que usarás en tus aplicaciones robóticas.</p>
+<p><strong>Creación del Espacio de Trabajo</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="o">[</span>Nombre_del_espacio_de_trabajo<span class="o">]</span>
+<span class="nb">cd</span><span class="w"> </span><span class="o">[</span>Nombre_del_espacio_de_trabajo<span class="o">]</span>
+mkdir<span class="w"> </span>src
+</pre></div>
+</div>
+<p>El comando <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> crea una nueva carpeta. <code class="docutils literal notranslate"><span class="pre">src</span></code> es la subcarpeta donde se almacenan los paquetes de ROS.</p>
+<p><strong>Compilación del Workspace</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>catkin_make
+</pre></div>
+</div>
+<p>Este comando genera los directorios <code class="docutils literal notranslate"><span class="pre">build/</span></code> y <code class="docutils literal notranslate"><span class="pre">devel/</span></code>, necesarios para compilar y ejecutar los paquetes.</p>
+<p><strong>Configurar entorno con .bashrc</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/[Nombre_del_espacio_de_trabajo]/devel/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+<p>Esto asegura que ROS reconozca tu espacio de trabajo cada vez que abras una terminal.</p>
+</section>
+<hr class="docutils" />
+<section id="paquetes-en-ros">
+<h2>Paquetes en ROS<a class="headerlink" href="#paquetes-en-ros" title="Enlace permanente a este encabezado"></a></h2>
+<p>Un <strong>paquete</strong> en ROS es la unidad mínima de software que contiene nodos, lanzadores, bibliotecas, archivos de configuración y dependencias.</p>
+<p><strong>Crear un paquete</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>src
+catkin_create_pkg<span class="w"> </span><span class="o">[</span>Nombre_del_paquete<span class="o">]</span><span class="w"> </span><span class="o">[</span>dependencias<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Dependencias comunes</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dependencia</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">roscpp</span></code></p></td>
+<td><p>Librería C++ de ROS</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rospy</span></code></p></td>
+<td><p>Librería Python de ROS</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">std_msgs</span></code></p></td>
+<td><p>Tipos de mensajes estándar</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sensor_msgs</span></code></p></td>
+<td><p>Datos de sensores (cámaras, lidar, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">geometry_msgs</span></code></p></td>
+<td><p>Posición, orientación, transformaciones</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">visualization_msgs</span></code></p></td>
+<td><p>Visualización en RViz</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tf</span></code></p></td>
+<td><p>Gestión de transformaciones de coordenadas</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rviz</span></code></p></td>
+<td><p>Herramienta 3D de visualización de datos robóticos</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Compilar el paquete</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
+catkin_make
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ejercicio">
+<h2>Ejercicio<a class="headerlink" href="#ejercicio" title="Enlace permanente a este encabezado"></a></h2>
+<p>A continuación creamos un espacio de trabajo denominado <code class="docutils literal notranslate"><span class="pre">catkin_ws</span></code> y el primer paquete a crear será <code class="docutils literal notranslate"><span class="pre">pkg_smr</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>catkin_ws
+<span class="nb">cd</span><span class="w"> </span>catkin_ws
+mkdir<span class="w"> </span>src
+</pre></div>
+</div>
+<p>Compilación:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>catkin_make
+</pre></div>
+</div>
+<p>Configuración del entorno</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/catkin_ws/devel/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="creacion-de-nodos-en-ros">
+<h2>Creación de Nodos en ROS<a class="headerlink" href="#creacion-de-nodos-en-ros" title="Enlace permanente a este encabezado"></a></h2>
+<p>Un <strong>nodo</strong> es una unidad ejecutable dentro del sistema distribuido de ROS. Se comunica mediante tópicos, servicios o acciones.</p>
+<p><strong>Crear nodo Python</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>src/<span class="o">[</span>Nombre_del_paquete<span class="o">]</span>/src
+gedit<span class="w"> </span><span class="o">[</span>Nombre_del_archivo.py<span class="o">]</span>
+chmod<span class="w"> </span>+x<span class="w"> </span><span class="o">[</span>Nombre_del_archivo.py<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Estructura básica del nodo - usando <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span> <span class="pre">rospy.is_shutdown()</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;primer_nodo&#39;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rate</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Rate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 1 Hz</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">rospy</span><span class="o">.</span><span class="n">is_shutdown</span><span class="p">():</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Mi primer nodo en ROS - while not rospy.is_shutdown()&quot;</span><span class="p">)</span>
+        <span class="n">rate</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">main</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<p><strong>Estructura con <code class="docutils literal notranslate"><span class="pre">rospy.spin()</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+<span class="k">def</span> <span class="nf">timer_callback</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Mi primer nodo en ROS - rospy.spin()&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;segundo_nodo&#39;</span><span class="p">,</span> <span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">rospy</span><span class="o">.</span><span class="n">Duration</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">timer_callback</span><span class="p">)</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">spin</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">main</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Con esto, tienes la base sólida para crear, compilar y ejecutar nodos en ROS.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="../1_prerequisitos/instalacionROS.html" class="btn btn-neutral float-left" title="Instalación de ROS Noetic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="mensajes.html" class="btn btn-neutral float-right" title="ROS MSG" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, AvigTech.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
