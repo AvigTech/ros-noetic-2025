@@ -103,12 +103,12 @@ git push origin main
 # Sincronizar cambios
 git pull origin main
 ```
-
+[tutorial](https://www.youtube.com/watch?v=mBYSUUnMt9M&t=14612s)
 ---
 
 ## Relación con ROS
 
-- **Ubuntu** es el sistema oficial y más estable para ejecutar ROS (especialmente ROS Noetic y ROS 2 Foxy).
+- **Ubuntu** es el sistema oficial y más estable para ejecutar ROS (especialmente ROS Noetic y ROS 2 Humble).
 - **GitHub** permite almacenar paquetes ROS, compartir código con la comunidad y reutilizar módulos.
 - Es común ver repositorios de GitHub con paquetes ROS que se pueden clonar y compilar directamente en `catkin_ws` o `ros2_ws`.
 

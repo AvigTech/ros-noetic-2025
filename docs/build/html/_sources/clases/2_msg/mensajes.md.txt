@@ -1,14 +1,165 @@
-# ROS MSG
+#  Mensajes y Topics en ROS
 
-En esta clase conocerás qué es ROS, su arquitectura y cómo empezar.
+## ¿Qué son los mensajes en ROS?
 
-![ROS Logo](../../_static/ros_logo.png)
+Los **mensajes en ROS** (Robot Operating System) son estructuras de datos utilizadas para intercambiar información entre nodos. ROS permite que los nodos se comuniquen a través de _topics_, y los datos enviados a través de estos _topics_ son los mensajes.
 
-## Temas
+Cada mensaje puede contener distintos tipos de datos: enteros, cadenas, flotantes, arreglos, estructuras más complejas, etc.
 
-- ¿Qué es ROS?
-- ¿Por qué usar ROS Noetic?
-- Instalación básica
-- Primeros comandos
+| Categoría | Comando | Descripción |
+|----------|---------|-------------|
+| **Mensajes** | `rosmsg show [tipo]` | Muestra la estructura de un mensaje. |
+|              | `rosmsg list` | Lista todos los tipos de mensajes disponibles. |
+|              | `rosmsg package [paquete]` | Lista los mensajes definidos en un paquete. |
+---
 
-> Esta es una clase introductoria escrita en Markdown y soportada por Sphinx + MyST.
+## ¿Qué son los topics?
+
+Un **topic** en ROS es un canal de comunicación por el cual los nodos pueden enviar o recibir mensajes. Los nodos pueden:
+- **Publicar** información en un _topic_.
+- **Suscribirse** a un _topic_ para recibir la información.
+
+Los topics son anónimos y no requieren que el publicador conozca a los suscriptores o viceversa. Esto permite una comunicación desacoplada y flexible.
+
+Comandos principales
+
+| Categoría | Comando | Descripción |
+|----------|---------|-------------|
+| **Topics** | `rostopic list` | Muestra todos los topics activos. |
+|           | `rostopic echo [topic]` | Muestra los mensajes publicados en un topic. |
+|           | `rostopic info [topic]` | Muestra información del topic (tipo, publishers, subscribers). |
+|           | `rostopic pub [topic] [tipo] [msg]` | Publica un mensaje manual en un topic. |
+|           | `rostopic hz [topic]` | Mide la frecuencia de publicación de un topic. |
+
+---
+
+## Uso de mensajes y topics
+
+### Tipos comunes de mensajes en ROS
+
+| Tipo de Mensaje     | Descripción                                                          |
+|---------------------|----------------------------------------------------------------------|
+| `std_msgs/String`   | [Texto plano](https://docs.ros.org/en/melodic/api/std_msgs/html/index-msg.html)                                                         |
+| `std_msgs/Int32`    | Números enteros de 32 bits.                                          |
+| `std_msgs/Float32`  | Números decimales.                                                   |
+| `geometry_msgs/Twist` | [Representa velocidad lineal y angularusado en robótica móvil](https://docs.ros.org/en/noetic/api/geometry_msgs/html/index-msg.html) |
+| `sensor_msgs/LaserScan` | [Datos de escaneo láser](https://docs.ros.org/en/jade/api/sensor_msgs/html/index-msg.html)                            |
+| `geometry_msgs/Pose` | Posición y orientación de un objeto.                              |
+| `nav_msgs/Odometry` | [Información de odometría del robot](https://docs.ros.org/en/noetic/api/nav_msgs/html/index-msg.html)                                 |
+
+---
+
+### Estructura básica de nodos publicadores y suscriptores
+
+- Un **nodo publicador** envía mensajes en un topic específico.
+- Un **nodo suscriptor** escucha un topic y procesa los mensajes entrantes.
+- También es posible tener nodos **publicador-suscriptor** que reciben mensajes, los procesan y responden.
+
+Los nodos pueden ser escritos en `Python` o `C++`. A continuación se definen ejemplos teóricos que utilizan tipos de mensajes como `std_msgs/String`.
+
+---
+### Ejemplo
+Nodo publicador
+```
+#!/usr/bin/env python3
+
+import rospy
+# Importo el tipo de mensaje a utilizar.
+from std_msgs.msg import String, Int64
+
+def talker():
+	# Nombre Topico, Tipo de msg, Tama;o de cola de mensaje
+	pub = rospy.Publisher('Topic_mensaje', Int64 , queue_size=1)
+	rospy.init_node('Nodo_publicador',anonymous=True)
+	
+    # Bucle 
+	rate = rospy.Rate(10) # 10 Hz
+	while not rospy.is_shutdown():
+		pub.publish(0)
+		rate.sleep()
+
+if __name__ == '__main__':
+	try:
+		talker()
+	except rospy.ROSInterruptException:
+		pass
+```
+
+Nodo Suscriptor
+```
+#!/usr/bin/env python3
+
+import rospy
+from std_msgs.msg import String,Int64
+
+def callback(dato):
+	print("El mensaje recibido es: ")
+	mensaje = dato.data + 1
+	print(mensaje)
+
+def funcion_principal():
+	rospy.Subscriber("Topic_mensaje" , Int64 , callback)
+	rospy.init_node('Nodo_suscriptor',anonymous=True)
+	rospy.spin()
+
+if __name__=='__main__':
+	try:
+		funcion_principal()
+	except rospy.ROSInterruptException:
+		pass
+```
+
+
+## Creación de mensajes personalizados en ROS
+
+Cuando los mensajes estándar no son suficientes, ROS permite crear **mensajes propios personalizados**. A continuación, se detallan los pasos:
+
+### Pasos para crear mensajes personalizados
+
+1. Crear un nuevo paquete que contenga los mensajes:
+   ```bash
+   catkin_create_pkg [Nombre_del_paquete] roscpp rospy std_msgs message_generation
+   ```
+
+2. Crear la carpeta `msg` dentro del paquete:
+   ```bash
+   mkdir msg
+   ```
+
+3. Crear un archivo `.msg` dentro de esa carpeta:
+   ```bash
+   gedit MensajePersonalizado.msg
+   ```
+   Ejemplo de contenido:
+   ```
+   string Palabra1
+   string Palabra2
+   ```
+
+4. Configurar el archivo `CMakeLists.txt`:
+   - Agregar `message_generation` en `find_package`.
+   - Descomentar y agregar el nombre del archivo `.msg` en `add_message_files`.
+   - Descomentar `generate_messages`.
+   - Agregar `message_runtime` en `catkin_package`.
+
+5. Configurar `package.xml`:
+   Agregar las dependencias correspondientes:
+   ```xml
+   <build_depend>message_generation</build_depend>
+   <exec_depend>message_runtime</exec_depend>
+   ```
+
+6. Compilar el paquete:
+   ```bash
+   cd ~/catkin_ws
+   catkin_make
+   ```
+
+7. Importar y usar el mensaje personalizado en los nodos:
+   ```python
+   from [nombre_del_paquete].msg import MensajePersonalizado
+   ```
+
+---
+
+Ahora puedes usar tus propios tipos de mensaje como si fueran parte de los mensajes estándar. Esta capacidad es muy útil para estructuras de datos específicas como múltiples sensores, comandos de robots, o datos combinados.
