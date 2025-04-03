@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mensajes y Topics en ROS &mdash; documentación de AvigTech Docs - 1.0</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
 
@@ -22,9 +22,7 @@
       <script src="../../_static/translations.js?v=efdbd0b9"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
-    <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="ROS Servicios" href="servicios.html" />
-    <link rel="prev" title="Elemento básicos de ROS" href="paquetes.html" /> 
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,23 +55,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_prerequisitos/instalacionROS.html">Instalación de ROS Noetic</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Mensajes, Servicios y Acciones</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="paquetes.html">Elemento básicos de ROS</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mensajes y Topics en ROS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#que-son-los-mensajes-en-ros">¿Qué son los mensajes en ROS?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#que-son-los-topics">¿Qué son los topics?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uso-de-mensajes-y-topics">Uso de mensajes y topics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tipos-comunes-de-mensajes-en-ros">Tipos comunes de mensajes en ROS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#estructura-basica-de-nodos-publicadores-y-suscriptores">Estructura básica de nodos publicadores y suscriptores</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ejemplo">Ejemplo</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#creacion-de-mensajes-personalizados-en-ros">Creación de mensajes personalizados en ROS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pasos-para-crear-mensajes-personalizados">Pasos para crear mensajes personalizados</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="mensajes.html">ROS MSG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="servicios.html">ROS Servicios</a></li>
 <li class="toctree-l1"><a class="reference internal" href="action.html">ROS Action</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xarm.html">Xarm Cobot</a></li>
@@ -115,7 +99,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Mensajes y Topics en ROS</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/clases/2_msg/mensajes.md.txt" rel="nofollow"> Ver código fuente de la página</a>
+            <a href="../../_sources/clases/2_msg/mensajes_y_topics.md.txt" rel="nofollow"> Ver código fuente de la página</a>
       </li>
   </ul>
   <hr/>
@@ -245,11 +229,11 @@
 <p>Nodo publicador</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">rospy</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
 <span class="c1"># Importo el tipo de mensaje a utilizar.</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">std_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">String</span><span class="p">,</span> <span class="n">Int64</span>
+<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span><span class="p">,</span> <span class="n">Int64</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">talker</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">talker</span><span class="p">():</span>
 	<span class="c1"># Nombre Topico, Tipo de msg, Tama;o de cola de mensaje</span>
 	<span class="n">pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s1">&#39;Topic_mensaje&#39;</span><span class="p">,</span> <span class="n">Int64</span> <span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 	<span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;Nodo_publicador&#39;</span><span class="p">,</span><span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -270,15 +254,15 @@
 <p>Nodo Suscriptor</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">rospy</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">std_msgs.msg</span><span class="w"> </span><span class="kn">import</span> <span class="n">String</span><span class="p">,</span><span class="n">Int64</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span><span class="p">,</span><span class="n">Int64</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">dato</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">dato</span><span class="p">):</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El mensaje recibido es: &quot;</span><span class="p">)</span>
 	<span class="n">mensaje</span> <span class="o">=</span> <span class="n">dato</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="mi">1</span>
 	<span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">funcion_principal</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">funcion_principal</span><span class="p">():</span>
 	<span class="n">rospy</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span><span class="s2">&quot;Topic_mensaje&quot;</span> <span class="p">,</span> <span class="n">Int64</span> <span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
 	<span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s1">&#39;Nodo_suscriptor&#39;</span><span class="p">,</span><span class="n">anonymous</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 	<span class="n">rospy</span><span class="o">.</span><span class="n">spin</span><span class="p">()</span>
@@ -340,7 +324,7 @@ catkin_make
 </div>
 </li>
 <li><p>Importar y usar el mensaje personalizado en los nodos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="p">[</span><span class="n">nombre_del_paquete</span><span class="p">]</span><span class="o">.</span><span class="n">msg</span> <span class="kn">import</span><span class="w"> </span><span class="nn">MensajePersonalizado</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="p">[</span><span class="n">nombre_del_paquete</span><span class="p">]</span><span class="o">.</span><span class="n">msg</span> <span class="kn">import</span> <span class="nn">MensajePersonalizado</span>
 </pre></div>
 </div>
 </li>
@@ -354,10 +338,7 @@ catkin_make
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="paquetes.html" class="btn btn-neutral float-left" title="Elemento básicos de ROS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="servicios.html" class="btn btn-neutral float-right" title="ROS Servicios" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
